@@ -48,4 +48,15 @@ export const calculateWeight = (
   return Number((projectedWeightPercentage * oneRepMax).toFixed(2))
 }
 
-console.log(calculateWeight(8, 4, 155, 75))
+export default {
+  fetch(request: Request) {
+    const projectedWeight = calculateWeight(
+      Number(request.headers.get('calculator_rpe')),
+      Number(request.headers.get('calculator_reps')),
+      Number(request.headers.get('calculator_weight')),
+      Number(request.headers.get('calculator_projected')),
+    )
+
+    return new Response(projectedWeight.toString())
+  },
+}
