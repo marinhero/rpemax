@@ -1,4 +1,4 @@
-# Weight Calculator for One Rep Max Sets (Uusing Rate of Perceived Exhaustion).
+# Weight Calculator for One Rep Max Sets (Using Rate of Perceived Exhaustion).
 
 ## What is this?
 
