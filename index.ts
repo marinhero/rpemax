@@ -102,7 +102,7 @@ export default {
           background-color: ${getRandomBackgroundColor()};
           display: flex;
           justify-content: center;
-          padding-top: 175px;
+          padding-top: 145px;
         }
 
       .results {
@@ -117,14 +117,14 @@ export default {
     // deno-fmt-ignore
     const html = `
     <html lang="en">
-      <title>Weight Calculator Powered By CloudFlare Workers</title>
+      <title>Weight Calculator -- By Marín Alcaraz</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
         ${style}
       </style>
       <body>
         <div class="results">
-          ${calculateWeight(Number(qs['rpe']), Number(qs['reps']), Number(qs['weight']), Number(qs['projected']))}
+          ${calculateWeight(Number(qs['rpe']), Number(qs['reps']), Number(qs['weight']), Number(qs['projected']))}lb
         </div>
       </body>
     </html>`
