@@ -18,6 +18,10 @@ The RPE scale usually ranges from 1 to 10, where 1 represents a very light activ
 
 This project was made with TypeScript, Deno and Denoflare. Setup was a breeze, try them!
 
+I've also set up an iOS shortcut to actually use this at the gym.
+
+<img width="683" alt="ios-shortcut" src="https://user-images.githubusercontent.com/316711/223001549-f9bb07df-e96d-4283-abf7-886ed7d02c57.png">
+
 ## Denoflare Server
 
 Boot up the denoflare server by running the following command:
@@ -39,3 +43,7 @@ curl "http://localhost:3030/" \
      -H 'calculator_weight: 155' \
      -H 'calculator_projected: 75'
 ```
+
+# Demo
+
+https://user-images.githubusercontent.com/316711/223001988-06e1767c-fb6b-4aa2-b3fd-c7595a5bb150.MP4
