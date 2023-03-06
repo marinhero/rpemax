@@ -59,16 +59,76 @@ const buildQueryStringMap = (kvs: Array<string>): { [key: string]: string } => {
 }
 
 // DenoFlare
+const BACKGROUND_COLORS = [
+  '#F9968B',
+  '#F27348',
+  '#76CDCD',
+  '#2CCED2',
+  '#DC828F',
+  '#F7CE76',
+  '#E8D6CF',
+  '#8C7386',
+  '#9C9359',
+  '#8EA4C8',
+  '#C3B8AA',
+  '#DEDCE4',
+  '#DB93A5',
+  '#C7CDC5',
+]
+
+const getRandomIndex = (min: number, max: number): number => {
+  return Math.floor(Math.random() * max + min)
+}
+
+const getRandomBackgroundColor = (): string => {
+  return BACKGROUND_COLORS[getRandomIndex(0, BACKGROUND_COLORS.length)]
+}
+
 export default {
   fetch(request: Request) {
-    const qs = buildQueryStringMap(request.url.split('?')[1].split('&'))
-    const projectedWeight = calculateWeight(
-      Number(qs['rpe']),
-      Number(qs['reps']),
-      Number(qs['weight']),
-      Number(qs['projected']),
-    )
+    let qs: { [key: string]: string } = {}
 
-    return new Response(projectedWeight.toString())
+    try {
+      qs = buildQueryStringMap(request.url.split('?')[1].split('&'))
+    } catch {
+      return new Response(
+        'Oops! I can\'t make sense of what you are trying to do!',
+      )
+    }
+
+    // deno-fmt-ignore
+    const style = `
+        body {
+          background-color: ${getRandomBackgroundColor()};
+          display: flex;
+          justify-content: center;
+          padding-top: 175px;
+        }
+
+      .results {
+        align-items: center;
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 110px;
+        gap: 20px;
+        justify-content: center;
+      } `
+
+    // deno-fmt-ignore
+    const html = `
+    <html lang="en">
+      <title>Weight Calculator Powered By CloudFlare Workers</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        ${style}
+      </style>
+      <body>
+        <div class="results">
+          ${calculateWeight(Number(qs['rpe']), Number(qs['reps']), Number(qs['weight']), Number(qs['projected']))}
+        </div>
+      </body>
+    </html>`
+
+    return new Response(html, { headers: { 'Content-Type': 'text/html' } })
   },
 }
