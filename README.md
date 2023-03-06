@@ -46,4 +46,4 @@ curl "http://localhost:3030/" \
 
 # Demo
 
-https://user-images.githubusercontent.com/316711/223001988-06e1767c-fb6b-4aa2-b3fd-c7595a5bb150.MP4
+![demo](https://user-images.githubusercontent.com/316711/223004037-64ec2fc5-8009-463f-babc-5f78718ebd8c.gif)
