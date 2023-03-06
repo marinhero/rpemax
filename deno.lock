@@ -4,6 +4,13 @@
     "https://deno.land/std@0.178.0/fmt/colors.ts": "938c5d44d889fb82eff6c358bea8baa7e85950a16c9f6dae3ec3a7a729164471",
     "https://deno.land/std@0.178.0/testing/_diff.ts": "1a3c044aedf77647d6cac86b798c6417603361b66b54c53331b312caeb447aea",
     "https://deno.land/std@0.178.0/testing/_format.ts": "a69126e8a469009adf4cf2a50af889aca364c349797e63174884a52ff75cf4c7",
-    "https://deno.land/std@0.178.0/testing/asserts.ts": "984ab0bfb3faeed92ffaa3a6b06536c66811185328c5dd146257c702c41b01ab"
+    "https://deno.land/std@0.178.0/testing/asserts.ts": "984ab0bfb3faeed92ffaa3a6b06536c66811185328c5dd146257c702c41b01ab",
+    "https://deno.land/x/querystring@v1.0.2/mod.js": "6e481edd342caf7605ef2eab07e7b3b9f05cffa029ac3520d2fa8777a6ca47ba",
+    "https://deno.land/x/querystring@v1.0.2/src/decode-uri-component.js": "06eeb159e40d93628bb7f4788f4643089f79e7d20d21cd0421513b5418a3aa9c",
+    "https://deno.land/x/querystring@v1.0.2/src/filter-obj.js": "6304139fac0e5542f165e55b66d1d5cdc5cd576062f572b6b5fcd42067b81237",
+    "https://deno.land/x/querystring@v1.0.2/src/query-string.js": "de744fb6c0ec2dfacce29d21023993c8699c06453989c7fbaf2a36188f2b5e40",
+    "https://deno.land/x/querystring@v1.0.2/src/split-on-first.js": "1531650605c4e4bdac56a4e25ba2f84d3e304c8e23dbb598edb13f1f28e9ecc0",
+    "https://deno.land/x/querystring@v1.0.2/src/strict-uri-encode.js": "a49626f63fa5fad785075ffc0d618cac2dc339edbc8c149683e3b36e6b0658ee",
+    "https://deno.land/x/querystring@v1.0.2/types.d.ts": "00c2c44ebc9597d50e8a9535c26d2d847df2b5d8f38ef5def376293df5a8e8b6"
   }
 }

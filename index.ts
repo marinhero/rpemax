@@ -48,13 +48,25 @@ export const calculateWeight = (
   return Number((projectedWeightPercentage * oneRepMax).toFixed(2))
 }
 
+const buildQueryStringMap = (kvs: Array<string>): { [key: string]: string } => {
+  const qs: { [key: string]: string } = {}
+  for (const entry of kvs) {
+    const spl = entry.split('=')
+    qs[spl[0]] = spl[1]
+  }
+
+  return qs
+}
+
+// DenoFlare
 export default {
   fetch(request: Request) {
+    const qs = buildQueryStringMap(request.url.split('?')[1].split('&'))
     const projectedWeight = calculateWeight(
-      Number(request.headers.get('calculator_rpe')),
-      Number(request.headers.get('calculator_reps')),
-      Number(request.headers.get('calculator_weight')),
-      Number(request.headers.get('calculator_projected')),
+      Number(qs['rpe']),
+      Number(qs['reps']),
+      Number(qs['weight']),
+      Number(qs['projected']),
     )
 
     return new Response(projectedWeight.toString())
