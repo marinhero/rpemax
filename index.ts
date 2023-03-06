@@ -102,7 +102,7 @@ export default {
           background-color: ${getRandomBackgroundColor()};
           display: flex;
           justify-content: center;
-          padding-top: 145px;
+          padding-top: 10px;
         }
 
       .results {
@@ -117,7 +117,7 @@ export default {
     // deno-fmt-ignore
     const html = `
     <html lang="en">
-      <title>Weight Calculator -- By Marín Alcaraz</title>
+      <title>Weight Calculator -- By Marín</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
         ${style}
