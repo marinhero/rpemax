@@ -96,6 +96,12 @@ export default {
       )
     }
 
+    if (Number(qs['rpe']) < 6.5) {
+      return new Response('RPE must be greater or equal than 6.5', {
+        headers: { 'Content-Type': 'text/html' },
+      })
+    }
+
     // deno-fmt-ignore
     const style = `
         body {
